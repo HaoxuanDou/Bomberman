@@ -24,6 +24,7 @@ public:
     std::vector<std::unique_ptr<Block>> blockVec;
 */
     QGraphicsScene* scene;
+    Player* player;
     std::unique_ptr<Map> map;
     std::vector<Block*> blockVec;
 };

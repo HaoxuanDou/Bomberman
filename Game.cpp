@@ -22,7 +22,7 @@ Game::Game(){
     scene->setBackgroundBrush(Qt::darkGreen);
 
     //set up a map
-    map =std::unique_ptr<Map>(new Map());
+    map = std::unique_ptr<Map>(new Map());
     //constructing the initial gameplay background and permmenant blocks
     Block* temp;
     for(int i=1; i<=WIDTH;i++){
@@ -35,6 +35,16 @@ Game::Game(){
             }
         }
     }
+
+    player = new Player();
+    scene->addItem(player);
+    //make player focusable
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
+
+
+
+
 
     setScene(scene);
 

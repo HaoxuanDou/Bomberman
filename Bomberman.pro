@@ -17,13 +17,17 @@ SOURCES += main.cpp\
     Map.cpp \
     Player.cpp \
     Block.cpp \
-    Bomb.cpp
+    Bomb.cpp \
+    Enemy.cpp \
+    Wave.cpp
 
 HEADERS  += Game.h \
     Map.h \
     Player.h \
     Block.h \
-    Bomb.h
+    Bomb.h \
+    Enemy.h \
+    Wave.h
 
 FORMS    +=
 
