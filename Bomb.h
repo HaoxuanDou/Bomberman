@@ -14,7 +14,7 @@ private:
     int Blast;
     //the position of the bomb
     int X;
-    int Y
+    int Y;
 };
 
 #endif // BOMB_H
