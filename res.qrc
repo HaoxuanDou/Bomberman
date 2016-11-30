@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>bomb.png</file>
+        <file>explosion.png</file>
+        <file>p_1_down.png</file>
+        <file>p_1_left.png</file>
+        <file>p_1_right.png</file>
+        <file>p_1_up.png</file>
+        <file>rock.png</file>
+    </qresource>
+    <qresource prefix="/sounds"/>
+</RCC>
