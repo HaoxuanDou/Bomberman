@@ -1,9 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include <QObject>
 #include <QGraphicsPixmapItem>
 
-class Player: public QGraphicsPixmapItem{
+class Player: public QObject, public QGraphicsPixmapItem{
+    Q_OBJECT
+public slots:
+    void spawn();
 public:
     Player();
     void keyPressEvent(QKeyEvent* event);

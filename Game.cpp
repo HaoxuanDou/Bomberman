@@ -46,6 +46,8 @@ Game::Game(){
 
 
 
+
+
     setScene(scene);
 
 

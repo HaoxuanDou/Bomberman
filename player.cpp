@@ -3,10 +3,13 @@
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QGraphicsScene>
+#include <QTimer>
 #include "map.h"
 #include "Bomb.h"
+#include "Enemy.h"
 #include "Game.h"
 #include <QDebug>
+#include <stdlib.h>
 //the initial position of the player
 const int INI_X = 8;
 const int INI_Y = 12;
@@ -14,6 +17,24 @@ const int INI_Y = 12;
 //const int BLOCKSIZE = 40;
 
 extern Game* game;
+void Player::spawn(){
+    //spawn the enemy randomly at the 4 corners of the map
+    int random_number = rand()%4;
+    if(random_number == 0){
+        Enemy* enemy = new Enemy(2,2);
+        scene()->addItem(enemy);
+    }else if(random_number == 1){
+        Enemy* enemy = new Enemy(2,14);
+        scene()->addItem(enemy);
+    }else if(random_number == 2){
+        Enemy* enemy = new Enemy(14,14);
+        scene()->addItem(enemy);
+    }else if(random_number == 3){
+        Enemy* enemy = new Enemy(14,2);
+        scene()->addItem(enemy);
+    }
+}
+
 Player::Player(){
     Blast = 1;//the power of the bomb is intialized to be 1
     //setup the initial image of the player
@@ -22,6 +43,11 @@ Player::Player(){
     X = INI_X;
     Y = INI_Y;
     setPos((INI_X-1)*BLOCKSIZE,(INI_Y-1)*BLOCKSIZE);
+
+    //spawn enemies
+    QTimer* timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),this,SLOT(spawn()));
+    timer->start(2000);
 
 }
 

@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     Block.cpp \
     Bomb.cpp \
     Enemy.cpp \
-    Wave.cpp
+    Wave.cpp \
+    Health.cpp \
+    Level.cpp
 
 HEADERS  += Game.h \
     Map.h \
@@ -27,7 +29,9 @@ HEADERS  += Game.h \
     Block.h \
     Bomb.h \
     Enemy.h \
-    Wave.h
+    Wave.h \
+    Health.h \
+    Level.h
 
 FORMS    +=
 
