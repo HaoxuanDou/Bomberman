@@ -8,6 +8,9 @@
 #include "Block.h"
 #include "Player.h"
 #include "Bomb.h"
+#include "Health.h"
+#include "Level.h"
+#include "Score.h"
 
 //each block is of size 40*40
 const int BLOCKSIZE = 40;
@@ -23,6 +26,9 @@ public:
     std::unique_ptr<Map> map;
     std::vector<std::unique_ptr<Block>> blockVec;
 */
+    Health* health;
+    Level* level;
+    Score* score;
     QGraphicsScene* scene;
     Player* player;
     std::unique_ptr<Map> map;

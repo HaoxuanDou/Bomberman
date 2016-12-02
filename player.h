@@ -3,14 +3,20 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 
+
 class Player: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public slots:
     void spawn();
+    void detect();//detect bomb wave
 public:
     Player();
+    void touchEnemy();//detect enemy encounters
     void keyPressEvent(QKeyEvent* event);
+    void blastUp();//increase the bomb power when levelup
+    void reduceEnemy();//reduce the enemy count when a enemy dies
 private:
+    int enemyCount;//the enemy count in the map
     //the position of the player
     int X;
     int Y;

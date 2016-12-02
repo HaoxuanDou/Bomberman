@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     Enemy.cpp \
     Wave.cpp \
     Health.cpp \
-    Level.cpp
+    Level.cpp \
+    Score.cpp
 
 HEADERS  += Game.h \
     Map.h \
@@ -31,7 +32,8 @@ HEADERS  += Game.h \
     Enemy.h \
     Wave.h \
     Health.h \
-    Level.h
+    Level.h \
+    Score.h
 
 FORMS    +=
 

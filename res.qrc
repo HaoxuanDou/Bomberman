@@ -8,6 +8,10 @@
         <file>p_1_up.png</file>
         <file>rock.png</file>
         <file>enemy.png</file>
+        <file>p_2_down.png</file>
+        <file>p_2_left.png</file>
+        <file>p_2_right.png</file>
+        <file>p_2_up.png</file>
     </qresource>
     <qresource prefix="/sounds"/>
 </RCC>

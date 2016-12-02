@@ -7,6 +7,7 @@ public:
     Health();
     void decrease();
     int getHealth();
+    void gameover();
 private:
     int health;
 };

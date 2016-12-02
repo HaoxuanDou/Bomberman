@@ -3,6 +3,9 @@
 #include "Block.h"
 #include "Player.h"
 #include "Bomb.h"
+#include "Health.h"
+#include "Level.h"
+#include "Score.h"
 #include <QGraphicsView>
 #include <vector>
 #include <memory>
@@ -10,8 +13,10 @@
 
 //We make the brackground to be of the size 15 blocks by 15 blocks, with each block of size 40*40
 Game::Game(){
-    //creating a new scene
-    //scene =std::unique_ptr<QGraphicsScene>(new QGraphicsScene());
+
+
+
+    //the game scene scene
     scene = new QGraphicsScene();
 
     //set the size of view and scene to be the preferred size
@@ -38,6 +43,13 @@ Game::Game(){
 
     player = new Player();
     scene->addItem(player);
+    health = new Health();
+    level = new Level();
+    score = new Score();
+    scene->addItem(health);
+    scene->addItem(level);
+    scene->addItem(score);
+
     //make player focusable
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

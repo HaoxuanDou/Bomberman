@@ -3,6 +3,7 @@
 #include <QGraphicsScene>
 #include <QPixmap>
 #include <QTimer>
+#include <QList>
 
 const int BLOCKSIZE = 40;
 Wave::Wave(int X, int Y){
