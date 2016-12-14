@@ -22,7 +22,9 @@ SOURCES += main.cpp\
     Wave.cpp \
     Health.cpp \
     Level.cpp \
-    Score.cpp
+    Score.cpp \
+    Starttext.cpp \
+    Endtext.cpp
 
 HEADERS  += Game.h \
     Map.h \
@@ -33,7 +35,9 @@ HEADERS  += Game.h \
     Wave.h \
     Health.h \
     Level.h \
-    Score.h
+    Score.h \
+    Starttext.h \
+    Endtext.h
 
 FORMS    +=
 

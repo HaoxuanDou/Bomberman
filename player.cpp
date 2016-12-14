@@ -75,6 +75,19 @@ Player::Player(){
 
 }
 
+int Player::getX(){
+    return X;
+}
+
+int Player::getY(){
+    return Y;
+}
+
+void Player::bombxplode()
+{
+    bombCount--;
+}
+
 void Player::touchEnemy(){
     //if player collides with enemy, health--
     QList<QGraphicsItem*> colliding_items = collidingItems();
@@ -120,8 +133,11 @@ void Player::keyPressEvent(QKeyEvent *event){
             touchEnemy();
         }
     }else if(event->key() == Qt::Key_Space){
-        Bomb* bomb = new Bomb(X,Y,Blast);
-        scene()->addItem(bomb);
+        if(bombCount < game->level->getLevel()){
+            Bomb* bomb = new Bomb(X,Y,Blast);
+            bombCount++;
+            scene()->addItem(bomb);
+        }
     }
 }
 

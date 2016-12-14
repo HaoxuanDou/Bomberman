@@ -56,7 +56,7 @@ void Bomb::Explode(){
             scene()->addItem(wave);
         }else break;
     }
-
+    game->player->bombxplode();
     scene()->removeItem(this);
     delete this;
 }

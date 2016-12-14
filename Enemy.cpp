@@ -9,43 +9,51 @@
 extern Game* game;
 //const int BLOCKSIZE = 40;
 void Enemy::move(){
-    //the enemy moves randomly to left,right,up and down
-    while(true){
-    int random_number = rand()%4;
-    if(random_number == 0){
+    //the enemy moves towards the player or moves randomly
+    //while(true){
+    int x = game->player->getX() - X;//indicating the x-direction towards the player
+    int y = game->player->getY() - Y;//indicating the y-direction towards the player
+    bool flag = true;
+
+    //int random_number = rand()%2;
+    if(x<0&&flag){
         if(game->map->getValue(X-1,Y) == 0){
             X-=1;
             setPixmap(QPixmap(":/images/p_2_left.png").scaled(BLOCKSIZE,BLOCKSIZE));
             setPos((X-1)*BLOCKSIZE,(Y-1)*BLOCKSIZE);
             touchPlayer();
-            break;
+            flag = false;
+            //break;
         }
-    }else if(random_number == 1){
+    }if(x>0&&flag){
         if(game->map->getValue(X+1,Y) == 0){
             X+=1;
             setPixmap(QPixmap(":/images/p_2_right.png").scaled(BLOCKSIZE,BLOCKSIZE));
             setPos((X-1)*BLOCKSIZE,(Y-1)*BLOCKSIZE);
             touchPlayer();
-            break;
+            flag = false;
+            //break;
         }
-    }else if(random_number == 2){
+    }if(y>0&&flag){
         if(game->map->getValue(X,Y+1) == 0){
             Y+=1;
             setPixmap(QPixmap(":/images/p_2_down.png").scaled(BLOCKSIZE,BLOCKSIZE));
             setPos((X-1)*BLOCKSIZE,(Y-1)*BLOCKSIZE);
             touchPlayer();
-            break;
+            flag = false;
+            //break;
         }
-    }else if(random_number == 3){
+    }if(y<0&&flag){
         if(game->map->getValue(X,Y-1) == 0){
             Y-=1;
             setPixmap(QPixmap(":/images/p_2_up.png").scaled(BLOCKSIZE,BLOCKSIZE));
             setPos((X-1)*BLOCKSIZE,(Y-1)*BLOCKSIZE);
             touchPlayer();
-            break;
+            flag = false;
+            //break;
         }
     }
-    }
+    //}
 }
 
 void Enemy::detect(){

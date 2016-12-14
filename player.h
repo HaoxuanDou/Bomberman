@@ -11,11 +11,15 @@ public slots:
     void detect();//detect bomb wave
 public:
     Player();
+    int getX();
+    int getY();
+    void bombxplode();//reduce the bombcount;
     void touchEnemy();//detect enemy encounters
     void keyPressEvent(QKeyEvent* event);
     void blastUp();//increase the bomb power when levelup
     void reduceEnemy();//reduce the enemy count when a enemy dies
 private:
+    int bombCount = 0;//the bomb count in the map
     int enemyCount;//the enemy count in the map
     //the position of the player
     int X;

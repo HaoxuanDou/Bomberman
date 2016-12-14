@@ -30,6 +30,8 @@ public:
     Level* level;
     Score* score;
     QGraphicsScene* scene;
+    QGraphicsScene* startScene;
+    QGraphicsScene* endScene;
     Player* player;
     std::unique_ptr<Map> map;
     std::vector<Block*> blockVec;
