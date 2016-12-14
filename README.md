@@ -1,4 +1,6 @@
-# Bomberman
+# Bomberman Game
+## Purpose:
+This game is dedicated to the PIC 10C final project, created by Haoxuan Dou
 ## The usage:
 1. Press space to drop a bomb, and use up/down/left/right key to move around
 2. As you bomb more enemies, your score and level go up
